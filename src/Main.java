@@ -6,7 +6,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        File temp = new File("C:\\Games");
+        File Games = new File("C\\");
+
+        File temp = new File("C:\\Games\\temp");
         if (temp.mkdir()) {
             System.out.println("Директория temp создана");
         }
@@ -20,25 +22,24 @@ public class Main {
             System.out.println(ex.getMessage());
         }
 
-        File src = new File("C:\\Games");
+        File src = new File("C:\\Games\\src");
         if (src.mkdir()) {
             directMessage(src);
         }
 
-        File saveGames = new File("C:\\Games");
+        File saveGames = new File("C:\\Games\\saveGames");
         if (saveGames.mkdir()) {
             directMessage(saveGames);
         }
 
-        File main = new File("C:\\Games\\src");
+        File main = new File("C:\\Games\\src\\main");
         if (main.mkdir()) {
             directMessage(main);
         }
 
         File mainFile = new File("C:\\Games\\src\\main", "main.java");
         try {
-            if (mainFile.createNewFile())
-                fileMessage(mainFile);
+            if (mainFile.createNewFile()) fileMessage(mainFile);
         } catch (IOException ex) {
             System.out.println((ex.getMessage()));
         }
@@ -52,39 +53,36 @@ public class Main {
             System.out.println(ex.getMessage());
         }
 
-        File test = new File("C:\\Games\\src");
+        File test = new File("C:\\Games\\src\\test");
         if (test.mkdir()) {
             directMessage(test);
         }
 
-        File res = new File("C:\\Games");
+        File res = new File("C:\\Games\\res");
         if (res.mkdir()) {
             directMessage(res);
         }
 
-        File drawables = new File("C:\\Games\\res");
+        File drawables = new File("C:\\Games\\res\\drawables");
         if (drawables.mkdir()) {
             directMessage(drawables);
         }
 
-        File vectors = new File("C:\\Games\\res");
+        File vectors = new File("C:\\Games\\res\\vectors");
         if (vectors.mkdir()) {
             directMessage(vectors);
         }
 
-        File icons = new File("C:\\Games\\res");
+        File icons = new File("C:\\Games\\res\\icons");
         if (icons.mkdir()) {
             directMessage(icons);
         }
-
-
-
     }
 
     public static void directMessage(File file) {
         try (FileWriter writer = new FileWriter("C:\\Games\\temp\\temp.txt", true)) {
-            writer.write("Директория " + file.getName() + " успешно создана");
-            writer.write('\n');
+            writer.write("Директория " + file.getName() + " успешно создана \n");
+         //   writer.write('\n');
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
@@ -92,8 +90,8 @@ public class Main {
 
     public static void fileMessage(File file) {
         try (FileWriter writer = new FileWriter("C:\\Games\\temp\\temp.txt", true)) {
-            writer.write("Файл " + file.getName() + " успешно создан");
-            writer.write('\n');
+            writer.write("Файл " + file.getName() + " успешно создан \n");
+            //     writer.write('\n');
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
