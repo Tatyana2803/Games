@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        File Games = new File("C\\");
+        File Games = new File("C\\Games");
 
         File temp = new File("C:\\Games\\temp");
         if (temp.mkdir()) {
@@ -81,8 +81,8 @@ public class Main {
 
     public static void directMessage(File file) {
         try (FileWriter writer = new FileWriter("C:\\Games\\temp\\temp.txt", true)) {
-            writer.write("Директория " + file.getName() + " успешно создана \n");
-         //   writer.write('\n');
+            writer.write("Директория " + file.getName() + " успешно создана \n    ");
+            System.out.println();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
@@ -90,8 +90,8 @@ public class Main {
 
     public static void fileMessage(File file) {
         try (FileWriter writer = new FileWriter("C:\\Games\\temp\\temp.txt", true)) {
-            writer.write("Файл " + file.getName() + " успешно создан \n");
-            //     writer.write('\n');
+            writer.write("Файл " + file.getName() + " успешно создан\n    ");
+            System.out.println();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
